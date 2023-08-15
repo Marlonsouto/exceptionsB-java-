@@ -27,7 +27,28 @@ public class Main {
         } else {
             Reservation reservation = new Reservation(roomNumber, checkIn, checkout);
             System.out.println("Reservation: "+ reservation);
+
+            System.out.println();
+            System.out.println("Enter the update dates ");
+            System.out.println("checkin date dd/mm/yyyy");
+            Date datecheckin = simpleDate.parse(scan.next());
+            System.out.println("checkout date dd/mm/yyyy");
+            Date datecheckout = simpleDate.parse(scan.next());
+
+            String error = reservation.update(datecheckin,datecheckout );
+            if (error != null ){
+                System.out.println("Error in reservation ");
+            } else {
+                System.out.println("Reservation:" +reservation );
+                
+            }
+
+
         }
+
+
+
+
 
 
 
